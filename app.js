@@ -10,10 +10,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const pool = new Pool({
-    user: 'postgres',
+    user: 'dpg-cndp3jv109ks738sqgh0-a.oregon-postgres.render.com',
     host: 'localhost',
-    database: 'Craftindica-ss',
-    password: 'admin',
+    database: 'postgres',
+    password: 'LmCTKcae7aoPtG51kVS1HriMTVJZyL8R',
     port: 5432, 
 });
 
