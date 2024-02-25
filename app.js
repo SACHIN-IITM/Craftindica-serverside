@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Pool } = require('pg');
@@ -9,12 +12,13 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+
 const pool = new Pool({
-    user: 'dpg-cndp3jv109ks738sqgh0-a.oregon-postgres.render.com',
-    host: 'localhost',
-    database: 'postgres',
-    password: 'LmCTKcae7aoPtG51kVS1HriMTVJZyL8R',
-    port: 5432, 
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
 });
 
 app.post('/api/login', async (req, res) => {
